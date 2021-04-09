@@ -1,0 +1,71 @@
+<hero
+ image="{{ section.settings.background_img | img_url: 'master' }}"
+ alignment="{{ section.settings.content_alignment }}"
+ title="{{ section.settings.content_title }}"
+ url="{{ section.settings.cta_url }}"
+ copy="{{ section.settings.copy_text }}"
+ ctatext="{{ section.settings.cta_text }}"
+>
+</hero>
+
+{% schema %}
+  {
+    "name": "Challange Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_img",
+        "label": "Background image"
+      },
+      { "type": "header", "content": "Text alignment" },
+      {
+        "type": "select",
+        "id": "content_alignment",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "default": "center"
+     },
+     { "type": "header", "content": "Copy" },
+     {
+       "type": "text",
+       "id": "content_title",
+       "label": "Title "
+     },
+     {
+       "type": "textarea",
+       "id": "copy_text",
+       "label": "Copy area"
+     },
+     { "type": "header", "content": "CTA" },
+     {
+       "type": "text",
+       "id": "cta_text",
+       "label": "CTA text"
+     },
+     {
+       "type": "url",
+       "id": "cta_url",
+       "label": "CTA URL"
+     }
+    ],
+    "presets": [
+      {
+        "category": "Generic",
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}
